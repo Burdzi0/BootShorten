@@ -4,6 +4,7 @@ import org.burdzi0.bootshorten.model.Link;
 import org.burdzi0.bootshorten.repository.LinkRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -37,6 +38,7 @@ public class LinkServiceImpl implements LinkService{
 
 	@Override
 	public Link save(Link link) {
+		link.setSince(LocalDateTime.now());
 		return repository.save(link);
 	}
 
