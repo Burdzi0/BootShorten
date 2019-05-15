@@ -15,7 +15,7 @@ public class ScheduldedRemovingLinksTask {
 		this.linkService = linkService;
 	}
 
-	@Scheduled(cron = "* * * * *")
+	@Scheduled(cron = "0 * * * * *")
 	public void deleteOldLinks() { //TODO Test delete old links schedulded task
 		int deleted = linkService.deleteAllOldLinks();
 		logger.info("Deleted :" + deleted + " old links");
